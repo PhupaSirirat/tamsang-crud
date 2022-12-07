@@ -7,7 +7,6 @@ import { Container, Row, Col } from "reactstrap";
 import products from "../assets/data/products";
 import ProductCard from "../components/UI/product-card";
 import ReactPaginate from "react-paginate";
-
 // import css
 
 const Home = () => {

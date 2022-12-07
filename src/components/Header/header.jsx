@@ -1,8 +1,9 @@
-import React from 'react';
-
+import React, { useRef } from 'react';
 import { Container } from 'reactstrap';
 import logo from '../../assets/images/logo.jpg';
 import { NavLink, Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+// import { cartUiActions } from '../../store/shopping-cart/cartUiSlice';
 import '../../styles/header.css';
 
 const nav__links = [
@@ -21,7 +22,15 @@ const nav__links = [
 ]
 
 const Header = () => {
-  return <header className="header">
+  const menuRef = useRef(null);
+  const headerRef = useRef(null);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  // const dispatch = useDispatch;
+  // const toggleCart = () => {
+  //   dispatch(cartUiActions.toggle);
+  // };
+ 
+  return <header className="header" ref={headerRef}>
     <Container>
       <div className="nav__wrapper d-flex align-items-center 
       justify-content-between">
@@ -46,6 +55,22 @@ const Header = () => {
             ))}
           </div>
         </div>
+
+        {/* Nav right icons */}
+        <div className="nav__right d-flex align-items-center gap-4">
+          <span className="cart__icon">
+            <i className="ri-shopping-basket-line"></i>
+            <span className="cart__badge">{totalQuantity}</span>
+          </span>
+
+          <span className="user">
+            <Link to="/">
+              <i className="ri-user-line"></i>
+            </Link>
+          </span>
+        </div>
+
+        
       </div>
     </Container>
   </header>

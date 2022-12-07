@@ -33,3 +33,38 @@
 .active__menu {
   color: #df2020 !important;
 }
+
+.cart__icon i,
+.user i {
+  font-size: 1.3rem;
+  color: #212245;
+  cursor: pointer;
+}
+
+.cart__icon {
+  position: relative;
+}
+.cart__badge {
+  position: absolute;
+  top: 23px;
+  right: -10px;
+  background: #df2020;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__shrink {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 99999;
+  box-shadow: 5px 5px 15px -5px;
+}
