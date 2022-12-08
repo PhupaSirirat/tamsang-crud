@@ -2,6 +2,16 @@
 import product_01 from '../images/product_01.jpg';
 import product_02 from '../images/product_02.jpg';
 import product_03 from '../images/product_03.jpeg';
+import product_04 from '../images/product_04.jpg';
+import product_05 from '../images/product_05.jpg';
+import product_06 from '../images/product_06.jpg';
+import product_07 from '../images/product_07.jpg';
+import product_08 from '../images/product_08.jpg';
+import product_09 from '../images/product_09.jpg';
+import product_10 from '../images/product_10.jpg';
+import product_11 from '../images/product_11.jpg';
+import product_12 from '../images/product_12.jpg';
+
 
 const products = [
     {
@@ -30,9 +40,73 @@ const products = [
     
     {
         id: '4',
-        title: 'ข้าวมันไก่ทอด',
+        title: 'ผัดผงกะหรี่หมูกรอบ',
         price: 60,
-        image: product_03,
+        image: product_04,
+        desc: 'Lorem Ipsum, Lorem Ipsum',
+    },
+
+    {
+        id: '5',
+        title: 'ต้มข่าไก่',
+        price: 60,
+        image: product_05,
+        desc: 'Lorem Ipsum, Lorem Ipsum',
+    },
+
+    {
+        id: '6',
+        title: 'ลาบหมู',
+        price: 60,
+        image: product_06,
+        desc: 'Lorem Ipsum, Lorem Ipsum',
+    },
+
+    {
+        id: '7',
+        title: 'บร็อคโคลี่ผัดกุ้งกระเทียม',
+        price: 60,
+        image: product_07,
+        desc: 'Lorem Ipsum, Lorem Ipsum',
+    },
+
+    {
+        id: '8',
+        title: 'แกงเขียวหวานไก่',
+        price: 60,
+        image: product_08,
+        desc: 'Lorem Ipsum, Lorem Ipsum',
+    },
+
+    {
+        id: '9',
+        title: 'หมูกรอบกระเทียมไข่ดาว',
+        price: 60,
+        image: product_09,
+        desc: 'Lorem Ipsum, Lorem Ipsum',
+    },
+
+    {
+        id: '10',
+        title: 'ผัดซีอิ๊ว',
+        price: 60,
+        image: product_10,
+        desc: 'Lorem Ipsum, Lorem Ipsum',
+    },
+
+    {
+        id: '11',
+        title: 'ต้มยำกุ้งน้ำข้น',
+        price: 60,
+        image: product_11,
+        desc: 'Lorem Ipsum, Lorem Ipsum',
+    },
+
+    {
+        id: '12',
+        title: 'ผัดไทย',
+        price: 60,
+        image: product_12,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },
 ];
