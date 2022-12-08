@@ -3,7 +3,6 @@
     text-align: center;
     padding: 5px;
     margin: 20px auto;
-    cursor: pointer;
   }
   
   .product__img img {
@@ -16,6 +15,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     transition: 0.4s;
+    cursor: pointer;
   }
   
   .product__img:hover {
@@ -24,7 +24,7 @@
   
   .product__content h5 a {
     color: #212245;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   
   .product__content h5 {
@@ -46,6 +46,10 @@
     color: #fff;
     border-radius: 5px;
     font-size: 0.9rem;
+  }
+
+  .addToCart__btn:hover {
+    background: #b21a1a;
   }
   
   @media only screen and (max-width: 992px) {
