@@ -27,11 +27,12 @@
 }
 
 .increase__btn,
-.decrease-btn {
+.decrease__btn,
+.delete__btn {
     cursor: pointer;
 }
 
-.delete-btn {
+.delete__btn {
     font-size: 1.1rem;
     font-weight: 600;
 }
