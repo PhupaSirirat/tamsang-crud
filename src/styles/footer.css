@@ -1,7 +1,8 @@
 
 
 .footer {
-    padding: 50px 0px;
+    margin-top: 60px;
+    padding: 30px 0px;
     background: #fde4e4;
 }
 .footer__logo img {
