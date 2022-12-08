@@ -27,6 +27,14 @@ const products = [
         image: product_03,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },
+    
+    {
+        id: '4',
+        title: 'ข้าวมันไก่ทอด',
+        price: 60,
+        image: product_03,
+        desc: 'Lorem Ipsum, Lorem Ipsum',
+    },
 ];
 
 export default products;
