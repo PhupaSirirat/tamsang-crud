@@ -2,15 +2,15 @@
 import product_01 from '../images/product_01.jpg';
 import product_02 from '../images/product_02.jpg';
 import product_03 from '../images/product_03.jpeg';
-import product_04 from '../images/product_04.jpg';
-import product_05 from '../images/product_05.jpg';
-import product_06 from '../images/product_06.jpg';
-import product_07 from '../images/product_07.jpg';
-import product_08 from '../images/product_08.jpg';
-import product_09 from '../images/product_09.jpg';
-import product_10 from '../images/product_10.jpg';
-import product_11 from '../images/product_11.jpg';
-import product_12 from '../images/product_12.jpg';
+import product_04 from '../images/product_04new.jpg';
+import product_05 from '../images/product_05new.png';
+import product_06 from '../images/product_06new.jpg';
+import product_07 from '../images/product_07new.jpg';
+import product_08 from '../images/product_08new.jpg';
+import product_09 from '../images/product_09new.jpg';
+import product_10 from '../images/product_10new.jpg';
+import product_11 from '../images/product_11new.png';
+import product_12 from '../images/product_12new.png';
 
 
 const products = [
