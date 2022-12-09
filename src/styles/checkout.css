@@ -1,22 +1,7 @@
-.all {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0px;
-}
-
-@media (max-width: 800px) {
-    .all {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
 .allform {
     border: none;
     margin-top: 50px;
     margin-left: 80px;
-    flex-grow: 7;
 }
 
 .subtitle {
@@ -31,11 +16,11 @@
 }
 
 .insideform {
-    width: 80%;
+    width: 60%;
     background: transparent;
     padding: 7px 20px;
     border: none;
-    border-bottom: 1px solid rgba(33, 34, 69, .2980392156862745);
+    border-bottom: 1px solid rgba(33,34,69,.2980392156862745);
 }
 
 input::-webkit-outer-spin-button,
@@ -44,9 +29,7 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+input:focus, textarea:focus, select:focus{
     outline: none;
 }
 
@@ -62,30 +45,4 @@ select:focus {
 
 .submitbutton:hover {
     background: #b21a1a;
-}
-
-.checkoutbill {
-    width: 300px;
-    max-height: 180px;
-    flex-grow: 1;
-    margin-top: 40px;
-    margin-left: 80px;
-    margin-right: 60px;
-    background: #fde4e4;
-    padding: 30px;
-    box-sizing: border-box;
-    display: block;
-    font-size: 1.0rem;
-}
-
-.totalbill {
-    font-size: 1.5rem;
-}
-
-.billline {
-    float: right;
-}
-
-.line {
-    opacity: 10%;
 }
