@@ -21,15 +21,15 @@ const Checkout = () => {
     const totalAmount = useSelector((state) => state.cart.totalAmount);
 
     return (
-        <div class="all">
-            <div class="allform">
-                <div class="subtitle">
+        <div className="all">
+            <div className="allform">
+                <div className="subtitle">
                     <label>ที่อยู่จัดส่ง</label>
                 </div>
                 <form onSubmit={handleSubmit}>
-                    <div class="singleform">
+                    <div className="singleform">
                         <input
-                            class="insideform"
+                            className="insideform"
                             type="text"
                             placeholder='ชื่อ'
                             name="firstname"
@@ -38,9 +38,9 @@ const Checkout = () => {
                             required
                         />
                     </div>
-                    <div class="singleform">
+                    <div className="singleform">
                         <input
-                            class="insideform"
+                            className="insideform"
                             type="text"
                             placeholder='นามสกุล'
                             name="lastname"
@@ -49,9 +49,9 @@ const Checkout = () => {
                             required
                         />
                     </div>
-                    <div class="singleform">
+                    <div className="singleform">
                         <input
-                            class="insideform"
+                            className="insideform"
                             type="text"
                             placeholder='จังหวัด'
                             name="province"
@@ -60,9 +60,9 @@ const Checkout = () => {
                             required
                         />
                     </div>
-                    <div class="singleform">
+                    <div className="singleform">
                         <input
-                            class="insideform"
+                            className="insideform"
                             type="text"
                             placeholder='เขต/อำเภอ'
                             name="district"
@@ -71,9 +71,9 @@ const Checkout = () => {
                             required
                         />
                     </div>
-                    <div class="singleform">
+                    <div className="singleform">
                         <input
-                            class="insideform"
+                            className="insideform"
                             type="text"
                             placeholder='แขวง/ตำบล'
                             name="subdistrict"
@@ -82,9 +82,9 @@ const Checkout = () => {
                             required
                         />
                     </div>
-                    <div class="singleform">
+                    <div className="singleform">
                         <input
-                            class="insideform"
+                            className="insideform"
                             type="text"
                             placeholder='เลขที่อยู่'
                             name="address"
@@ -93,9 +93,9 @@ const Checkout = () => {
                             required
                         />
                     </div>
-                    <div class="singleform">
+                    <div className="singleform">
                         <input
-                            class="insideform"
+                            className="insideform"
                             type="number"
                             placeholder='รหัสไปรษนีย์'
                             name="postalcode"
@@ -104,9 +104,9 @@ const Checkout = () => {
                             required
                         />
                     </div>
-                    <div class="singleform">
+                    <div className="singleform">
                         <input
-                            class="insideform"
+                            className="insideform"
                             type="number"
                             placeholder='หมายเลขโทรศัพท์'
                             name="phonenumber"
@@ -115,9 +115,9 @@ const Checkout = () => {
                             required
                         />
                     </div>
-                    <div class="singleform">
+                    <div className="singleform">
                         <input
-                            class="insideform"
+                            className="insideform"
                             type="text"
                             placeholder='อีเมล์'
                             name="email"
@@ -126,16 +126,16 @@ const Checkout = () => {
                             required
                         />
                     </div>
-                    <div class="submitframe">
-                        <input class="submitbutton" type="submit" />
+                    <div className="submitframe">
+                        <input className="submitbutton" type="submit" />
                     </div>
                 </form>
             </div>
-            <div class="checkoutbill">
-                <h6>ราคารวม : <span class="billline">${totalAmount}</span></h6>
-                <h6>ค่าส่ง : <span class="billline">$30</span></h6>
-                <hr class="line"></hr>
-                <h5 class="totalbill">ทั้งหมด : <span class="billline">${totalAmount + 30}</span></h5>
+            <div className="checkoutbill">
+                <h6>ราคารวม : <span className="billline">${totalAmount}</span></h6>
+                <h6>ค่าส่ง : <span className="billline">$30</span></h6>
+                <hr className="line"></hr>
+                <h5 className="totalbill">ทั้งหมด : <span className="billline">${totalAmount + 30}</span></h5>
             </div>
         </div>
     )
