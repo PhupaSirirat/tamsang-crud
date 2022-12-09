@@ -20,13 +20,12 @@ const nav__links = [
     path: '/contact'
   },
   {
-    display: 'Checkout',
-    path: '/checkout'
+    display: 'History',
+    path: '/purchase-history'
   },
 ]
 
 const Header = () => {
-  // const menuRef = useRef(null);
   const headerRef = useRef(null);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();

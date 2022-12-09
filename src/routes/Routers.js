@@ -5,10 +5,7 @@ import Home from '../pages/Home';
 import Cart from '../pages/Cart';
 import Contact from '../pages/Contact';
 import Checkout from '../pages/Checkout';
-import Login from "../pages/Login"
-import Register from "../pages/Register"
-import Member from "../pages/Member"
-import Album from "../pages/Album"
+import History from '../pages/History';
 
 const Routers = () => {
     return <Routes>
@@ -17,11 +14,12 @@ const Routers = () => {
         <Route path='/cart' element={<Cart />}/>
         <Route path='/contact' element={<Contact />}/>
         <Route path='/checkout' element={<Checkout />}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path='/purchase-history' element={<History />}/>
+
+        {/* <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/member" element={<Member/>}/>
-        <Route path="/album" element={<Album/>}/>
-        
+        <Route path="/album" element={<Album/>}/> */}
     </Routes>
 }
 
