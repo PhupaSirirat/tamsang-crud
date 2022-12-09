@@ -19,6 +19,10 @@ const nav__links = [
     display: 'Contact',
     path: '/contact'
   },
+  {
+    display: 'Checkout',
+    path: '/checkout'
+  },
 ]
 
 const Header = () => {

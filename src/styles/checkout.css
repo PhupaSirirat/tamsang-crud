@@ -1,0 +1,48 @@
+.allform {
+    border: none;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+}
+
+.singleform {
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    border: none;
+}
+
+.insideform {
+    width: 60%;
+    background: transparent;
+    padding: 7px 20px;
+    border: none;
+    border-bottom: 1px solid rgba(33,34,69,.2980392156862745);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+.submitbutton {
+    margin-top: 20px;
+    border: none;
+    padding: 7px 25px;
+    background: #df2020;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.submitbutton:hover {
+    background: #b21a1a;
+}
