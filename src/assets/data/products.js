@@ -24,7 +24,7 @@ const products = [
     {
         id: '2',
         title: 'คะน้าหมูกรอบ',
-        price: 70,
+        price: 75,
         image: product_02,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },
@@ -32,7 +32,7 @@ const products = [
     {
         id: '3',
         title: 'ข้าวมันไก่',
-        price: 60,
+        price: 55,
         image: product_03,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },
@@ -40,7 +40,7 @@ const products = [
     {
         id: '4',
         title: 'ผัดผงกะหรี่หมูกรอบ',
-        price: 60,
+        price: 80,
         image: product_04,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },
@@ -48,7 +48,7 @@ const products = [
     {
         id: '5',
         title: 'ต้มข่าไก่',
-        price: 60,
+        price: 85,
         image: product_05,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },
@@ -56,7 +56,7 @@ const products = [
     {
         id: '6',
         title: 'ลาบหมู',
-        price: 60,
+        price: 75,
         image: product_06,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },
@@ -64,7 +64,7 @@ const products = [
     {
         id: '7',
         title: 'บร็อคโคลี่ผัดกุ้งกระเทียม',
-        price: 60,
+        price: 119,
         image: product_07,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },
@@ -72,7 +72,7 @@ const products = [
     {
         id: '8',
         title: 'แกงเขียวหวานไก่',
-        price: 60,
+        price: 129,
         image: product_08,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },
@@ -80,7 +80,7 @@ const products = [
     {
         id: '9',
         title: 'หมูกรอบกระเทียมไข่ดาว',
-        price: 60,
+        price: 75,
         image: product_09,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },
@@ -96,7 +96,7 @@ const products = [
     {
         id: '11',
         title: 'ต้มยำกุ้งน้ำข้น',
-        price: 60,
+        price: 175,
         image: product_11,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },
@@ -104,7 +104,7 @@ const products = [
     {
         id: '12',
         title: 'ผัดไทย',
-        price: 60,
+        price: 55,
         image: product_12_1,
         desc: 'Lorem Ipsum, Lorem Ipsum',
     },

@@ -24,7 +24,7 @@ const NewProductCard = (props) => {
             <div>
                 <h5 className="title">{title}</h5>
                 <div className="d-flex justify-content-between">
-                    <span className="product_price">${price}</span>
+                    <span className="product_price">{price} ฿</span>
                     <button className="newbtn" onClick={addToCart}>Add to cart</button>
                 </div>
             </div>
