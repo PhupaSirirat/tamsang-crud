@@ -6,6 +6,10 @@ import Cart from '../pages/Cart';
 import Contact from '../pages/Contact';
 import Checkout from '../pages/Checkout';
 import History from '../pages/History';
+import Album from "../pages/Album"
+import Login from "../pages/Login"
+import Member from "../pages/Member"
+import Register from "../pages/Register"
 
 const Routers = () => {
     return <Routes>
@@ -15,6 +19,13 @@ const Routers = () => {
         <Route path='/contact' element={<Contact />}/>
         <Route path='/checkout' element={<Checkout />}/>
         <Route path='/purchase-history' element={<History />}/>
+        <Route path='/album' element={<Album />}/>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/member' element={<Member />}/>
+        <Route path='/register' element={<Register />}/>
+
+
+
     </Routes>
 }
 
