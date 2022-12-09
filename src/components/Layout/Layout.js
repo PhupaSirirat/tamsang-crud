@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../Header/header";
 import Footer from "../Footer/footer";
 import Routes from "../../routes/Routers";
-import Cart from "../UI/cart/Cart";
+import Cart from "../UI/cart/CartSidebar";
 import { useSelector } from "react-redux";
 
 const Layout = () => {
