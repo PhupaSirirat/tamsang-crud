@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@700&family=Lato:wght@300&family=Prompt&display=swap');
+
 th {
     text-align: center;
   }
@@ -31,6 +33,17 @@ th {
     background: #df2020;
     padding: 5px 15px;
     border-radius: 5px;
+  }
+
+  .cart-title {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+  }
+
+  .increase__btn {
+    margin-right: 10px;
+  }
+  .decrease__btn {
+    margin-left: 10px;
   }
   
   @media only screen and (max-width: 768px) {

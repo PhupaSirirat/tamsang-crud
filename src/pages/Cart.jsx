@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
     const cartItems = useSelector((state)=> state.cart.cartItems);
     const totalAmount = useSelector((state)=> state.cart.totalAmount);
+
     return (
         <section>
             <Container>
@@ -59,6 +60,17 @@ const Cart = () => {
 const Tr = (props) => {
     const { id, image, title, price, quantity } = props.item;
     const dispatch = useDispatch();
+    const increamentItem = () => {
+        dispatch(cartActions.addItem({
+            id,
+            title,
+            price,
+            image,
+        }))
+    }
+    const decreaseItem = () => {
+        dispatch(cartActions.removeItem(id));
+    }
     const deleteItem = () => {
         dispatch(cartActions.deleteItem(id));
     };
@@ -68,9 +80,17 @@ const Tr = (props) => {
             <td className="text-center cart__img-box">
                 <img src={image} alt="" />
             </td>
-            <td className="text-center">{title}</td>
+            <td className="text-center cart-title">{title}</td>
             <td className="text-center">${price}</td>
-            <td className="text-center">{quantity}</td>
+            <td className="text-center quantity-box">
+                <span className="increase__btn" onClick={increamentItem}>
+                        <i className="ri-add-line"></i>
+                </span>
+                {quantity}
+                <span className="decrease__btn" onClick={decreaseItem}>
+                    <i className="ri-subtract-line"></i>
+                </span>
+            </td>
             <td className="text-center cart__item-del">
                 <i className="ri-delete-bin-line" onClick={deleteItem}></i>
             </td>
