@@ -68,7 +68,7 @@ const Header = () => {
           </span>
 
           <span className="user">
-            <Link to="/">
+            <Link to="/login">
               <i className="ri-user-line"></i>
             </Link>
           </span>
