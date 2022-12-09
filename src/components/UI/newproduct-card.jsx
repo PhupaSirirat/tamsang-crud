@@ -1,10 +1,8 @@
 import React from 'react';
 import "../../styles/newproduct-card.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/shopping-cart/cartSlice";
-
-import image from "../../assets/images/product_01.jpg";
 
 const NewProductCard = (props) => {
     const { id, title, image, price } = props.item;

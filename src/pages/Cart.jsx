@@ -68,7 +68,7 @@ const Tr = (props) => {
             <td className="text-center cart__img-box">
                 <img src={image} alt="" />
             </td>
-            <td className="text-center">{title}</td>
+            <td className="text-center cart-title">{title}</td>
             <td className="text-center">${price}</td>
             <td className="text-center">{quantity}</td>
             <td className="text-center cart__item-del">
