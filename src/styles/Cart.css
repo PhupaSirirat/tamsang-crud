@@ -38,6 +38,13 @@ th {
   .cart-title {
     font-family: 'IBM Plex Sans Thai', sans-serif;
   }
+
+  .increase__btn {
+    margin-right: 10px;
+  }
+  .decrease__btn {
+    margin-left: 10px;
+  }
   
   @media only screen and (max-width: 768px) {
     th,

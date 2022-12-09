@@ -7,10 +7,9 @@ import product_05 from '../images/product_05new.png';
 import product_06 from '../images/product_06new.jpg';
 import product_07 from '../images/product_07new.jpg';
 import product_08 from '../images/product_08new.jpg';
-import product_09 from '../images/product_09new.jpg';
+import product_09 from '../images/product_09.jpg';
 import product_10 from '../images/product_10new.jpg';
 import product_11 from '../images/product_11new.png';
-import product_12 from '../images/product_12new.png';
 import product_12_1 from '../images/product_12_1.jpg';
 
 const products = [
