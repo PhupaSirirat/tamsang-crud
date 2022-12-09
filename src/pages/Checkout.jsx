@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import '../styles/checkout.css';
-import ReactDOM from 'react-dom/client';
 
 const Checkout = () => {
     const [inputs, setInputs] = useState({});
