@@ -21,7 +21,7 @@ const Routers = () => {
         <Route path="/register" element={<Register/>}/>
         <Route path="/member" element={<Member/>}/>
         <Route path="/album" element={<Album/>}/>
-
+        
     </Routes>
 }
 
