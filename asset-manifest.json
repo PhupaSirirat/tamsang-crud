@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tamsang-crud/static/css/main.6bd9e735.css",
-    "main.js": "/tamsang-crud/static/js/main.00a0295d.js",
+    "main.js": "/tamsang-crud/static/js/main.f2b15f60.js",
     "static/js/787.334931e1.chunk.js": "/tamsang-crud/static/js/787.334931e1.chunk.js",
     "static/media/logo.jpg": "/tamsang-crud/static/media/logo.7668f04e08ba9b555410.jpg",
     "static/media/remixicon.svg?t=1590207869815": "/tamsang-crud/static/media/remixicon.9cedd2150922ead84869.svg",
@@ -23,11 +23,11 @@
     "static/media/product_03.jpeg": "/tamsang-crud/static/media/product_03.b75656c838886b4181da.jpeg",
     "index.html": "/tamsang-crud/index.html",
     "main.6bd9e735.css.map": "/tamsang-crud/static/css/main.6bd9e735.css.map",
-    "main.00a0295d.js.map": "/tamsang-crud/static/js/main.00a0295d.js.map",
+    "main.f2b15f60.js.map": "/tamsang-crud/static/js/main.f2b15f60.js.map",
     "787.334931e1.chunk.js.map": "/tamsang-crud/static/js/787.334931e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6bd9e735.css",
-    "static/js/main.00a0295d.js"
+    "static/js/main.f2b15f60.js"
   ]
 }
