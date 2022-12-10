@@ -21,7 +21,7 @@ const Checkout = (props) => {
         }
         else {
             alert('Purchase sent successfully');
-            alert(inputs.name+', '+inputs.address);
+            alert(inputs.name + ', ' + inputs.address);
             props.onAddOrder(inputs);
         }
     }
@@ -90,15 +90,15 @@ const Checkout = (props) => {
                         />
                     </div>
                     <div className="submitframe">
-                        <input className="submitbutton" type="submit"/>
+                        <input className="submitbutton" type="submit" />
                     </div>
                 </form>
             </div>
             <div className="checkoutbill">
-                <h6>ราคารวม : <span className="billline">${totalAmount}</span></h6>
-                <h6>ค่าส่ง : <span className="billline">$30</span></h6>
+                <h6>ราคารวม : <span className="billline">{totalAmount}฿</span></h6>
+                <h6>ค่าส่ง : <span className="billline">30฿</span></h6>
                 <hr className="line"></hr>
-                <h5 className="totalbill">ทั้งหมด : <span className="billline">${totalAmount + 30}</span></h5>
+                <h5 className="totalbill">ทั้งหมด : <span className="billline">{totalAmount + 30}฿</span></h5>
             </div>
         </div>
     )
