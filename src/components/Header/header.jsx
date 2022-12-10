@@ -16,12 +16,12 @@ const nav__links = [
     path: '/cart'
   },
   {
-    display: 'Contact',
-    path: '/contact'
-  },
-  {
     display: 'History',
     path: '/purchase-history'
+  },
+  {
+    display: 'Contact',
+    path: '/contact'
   },
 ]
 

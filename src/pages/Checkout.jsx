@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import '../styles/checkout.css';
-import Order from '../store/Order';
 
 const Checkout = (props) => {
     const [inputs, setInputs] = useState({});
