@@ -41,6 +41,12 @@
     font-size: 0.9rem;
 }
 
-.btn:hover {
+.newbtn:hover {
+    background: #c91d1d;
+    transition: 0.2s;
+  }
+
+.newbtn:active {
     background: #b21a1a;
+    transition: 0.2s;
   }
