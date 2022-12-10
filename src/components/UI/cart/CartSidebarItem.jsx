@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 const CartItem = ({item}) => {
-
     const {id, title, price, image, quantity, totalPrice} = item;
     const dispatch = useDispatch();
     const increamentItem = () => {

@@ -2,11 +2,16 @@ import React from 'react';
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import '../styles/checkout.css';
+import { cartActions } from '../store/shopping-cart/cartSlice';
 
 const Checkout = (props) => {
     const [inputs, setInputs] = useState({});
     const cartItems = useSelector((state) => state.cart.cartItems);
     const totalAmount = useSelector((state) => state.cart.totalAmount);
+    const dispatch = useDispatch();
+    const resetCart = () => {
+        dispatch(cartActions.resetItem());
+    }
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -15,6 +20,15 @@ const Checkout = (props) => {
     }
 
     const handleSubmit = (event) => {
+        // Get Date & push in [inputs]
+        const date = new Date();
+        const showTime = date.getFullYear() + "/" + (date.getMonth()+1) + "/" + date.getDate() 
+        + " " + date.getHours() 
+        + ":" + date.getMinutes() 
+        + ":" + date.getSeconds();
+        inputs.totalAmount = totalAmount;
+        inputs.showTime = showTime;
+
         event.preventDefault();
         if (cartItems.length === 0) {
             alert('No food to purchase')
@@ -23,6 +37,7 @@ const Checkout = (props) => {
             alert('Purchase sent successfully');
             alert(inputs.name + ', ' + inputs.address);
             props.onAddOrder(inputs);
+            resetCart();
         }
     }
 

@@ -10,7 +10,6 @@ import Album from "../pages/Album"
 import Login from "../pages/Login"
 import Member from "../pages/Member"
 import Register from "../pages/Register"
-
 import { useState } from 'react';
 
 
@@ -19,8 +18,8 @@ const Routers = () => {
     const onAddNewOrder = (newOrder) => {
         addOrder((prevOrder)=>{
             return [newOrder,...prevOrder]
-    })
-}
+        })
+    }
     return <Routes>
         <Route path='/' element={<Navigate to='/home'/>}/>
         <Route path='/home' element={<Home />}/>
