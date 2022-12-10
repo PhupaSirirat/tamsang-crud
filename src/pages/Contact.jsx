@@ -16,25 +16,25 @@ const Contact = () => {
         <div className="address details">
           <i className="fas fa-map-marker-alt" />
           <div className="topic">Address</div>
-          <div className="text-one">Surkhet, NP12</div>
-          <div className="text-two">Birendranagar 06</div>
+          <div className="text-one">Phayathai Road, Pathumwan</div>
+          <div className="text-two">Bangkok, Thailand</div>
         </div>
         <div className="phone details">
           <i className="fas fa-phone-alt" />
           <div className="topic">Phone</div>
-          <div className="text-one">+0098 9893 5647</div>
-          <div className="text-two">+0096 3434 5678</div>
+          <div className="text-one">+66 2215 3555</div>
+          <div className="text-two">+66 2218 2000</div>
         </div>
         <div className="email details">
           <i className="fas fa-envelope" />
           <div className="topic">Email</div>
-          <div className="text-one">codinglab@gmail.com</div>
-          <div className="text-two">info.codinglab@gmail.com</div>
+          <div className="text-one">pr.chula.ac.th</div>
+          <div className="text-two">int.off@chula.ac.th</div>
         </div>
       </div>
       <div className="right-side">
-        <div className="topic-text">Send us a message</div>
-        <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+        <div className="topic-text">Send us a feedback</div>
+        <p>If you have any feedback, please leave it below.</p>
         <form action="#">
           <div className="input-box">
             <input type="text" placeholder="Enter your name" />
@@ -46,7 +46,7 @@ const Contact = () => {
             <input type="text" placeholder="Enter your feedback" />
           </div>
           <div className="button">
-            <input type="button" defaultValue="Send Now" />
+            <input type="button" defaultValue="Send" />
           </div>
         </form>
       </div>
