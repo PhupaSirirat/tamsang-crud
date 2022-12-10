@@ -21,6 +21,7 @@ const Routers = () => {
     }
     return <Routes>
         <Route path='/' element={<Navigate to='/home'/>}/>
+        <Route path='/tamsang-crud' element={'/home'}/>
         <Route path='/home' element={<Home />}/>
         <Route path='/cart' element={<Cart />}/>
         <Route path='/contact' element={<Contact />}/>
