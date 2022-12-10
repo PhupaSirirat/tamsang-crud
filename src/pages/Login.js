@@ -70,7 +70,7 @@ export default function SignIn() {
             alert("login success")
           } else {
             localStorage.setItem("token", data.token)
-            window.location = "/album"
+            window.location = "/login"
             alert("login success")
           }
         } else {
