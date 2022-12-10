@@ -35,7 +35,6 @@ const Checkout = (props) => {
         }
         else {
             alert('Purchase sent successfully');
-            alert(inputs.name + ', ' + inputs.address);
             props.onAddOrder(inputs);
             resetCart();
         }
