@@ -35,7 +35,23 @@ function Copyright() {
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const theme = createTheme();
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
 
 export default function Album() {
     useEffect(() => {
@@ -88,9 +104,9 @@ export default function Album() {
     
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position="relative" sx={{mt : 3}} color="warning">
         <Toolbar>
-          <CameraIcon sx={{ mr: 2 }} />
+          <CameraIcon sx={{ mr: 2}} />
           <Typography variant="h6" color="inherit" noWrap>
             Album layout
           </Typography>
@@ -126,7 +142,7 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained" onClick={handleLogout}>Logout</Button>
+              <Button variant="contained" color="warning" onClick={handleLogout}>Logout</Button>
             </Stack>
           </Container>
         </Box>

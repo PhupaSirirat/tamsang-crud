@@ -26,7 +26,23 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#ffa22b',
+      dark: '#b76e11',
+      contrastText: '#000',
+    },
+  },
+});
+
 
 export default function SignIn() {
   const handleSubmit = (event) => {
@@ -114,6 +130,7 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
+              color='secondary'
               sx={{ mt: 3, mb: 2 }}
             >
               Sign In
