@@ -16,7 +16,7 @@ const Cart = () => {
                 <Row>
                     <Col lg="12">
                         {cartItems.length === 0 ? (
-                            <h5 className="text-center">Your cart is empty</h5>
+                            <h5 className="text-center cart-empty">Your cart is empty</h5>
                         ) : (
                             <table className="table table-bordered">
                                 <thead>

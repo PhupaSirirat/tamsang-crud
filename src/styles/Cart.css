@@ -45,6 +45,9 @@ th {
   .decrease__btn {
     margin-left: 10px;
   }
+  .cart-empty {
+    margin: 150px 0px;
+  }
   
   @media only screen and (max-width: 768px) {
     th,

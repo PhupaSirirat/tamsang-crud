@@ -194,7 +194,6 @@ export default function Album() {
           component="p"
         >
           Something here to give the footer a purpose!
-          // //        
            {dataes.map(val => (
             <p>{val.fname}</p>
           ))}

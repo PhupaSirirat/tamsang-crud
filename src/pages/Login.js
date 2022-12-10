@@ -64,7 +64,7 @@ export default function SignIn() {
       .then((response) => response.json())
       .then((data) => {
         if(data.status === "ok"){
-          if (jsonData.email != "admin"){
+          if (jsonData.email !== "admin"){
             localStorage.setItem("token", data.token)
             window.location = "/home"
             alert("login success")

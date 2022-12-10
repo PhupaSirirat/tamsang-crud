@@ -1,5 +1,4 @@
 import '../styles/history.css';
-import { useSelector, useDispatch } from "react-redux";
 const Order = (props) => {
     const {name, address, postalcode, phonenumber, email, totalAmount, showTime} = props;
     console.log(name, address, postalcode, phonenumber);

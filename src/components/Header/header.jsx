@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { Container } from 'reactstrap';
 import logo from '../../assets/images/logo.jpg';
 import { NavLink, Link } from 'react-router-dom';
