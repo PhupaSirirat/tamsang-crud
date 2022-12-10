@@ -11,21 +11,27 @@ import Login from "../pages/Login"
 import Member from "../pages/Member"
 import Register from "../pages/Register"
 
+import { useState } from 'react';
+
+
 const Routers = () => {
+    const [orders, addOrder] = useState([]);
+    const onAddNewOrder = (newOrder) => {
+        addOrder((prevOrder)=>{
+            return [newOrder,...prevOrder]
+    })
+}
     return <Routes>
         <Route path='/' element={<Navigate to='/home'/>}/>
         <Route path='/home' element={<Home />}/>
         <Route path='/cart' element={<Cart />}/>
         <Route path='/contact' element={<Contact />}/>
-        <Route path='/checkout' element={<Checkout />}/>
-        <Route path='/purchase-history' element={<History />}/>
+        <Route path='/checkout' element={<Checkout onAddOrder={onAddNewOrder}/>}/>
+        <Route path='/purchase-history' element={<History items={orders}/>}/>
         <Route path='/album' element={<Album />}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/member' element={<Member />}/>
         <Route path='/register' element={<Register />}/>
-
-
-
     </Routes>
 }
 

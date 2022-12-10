@@ -1,27 +1,16 @@
-
-const initialOrder = {
-    
-    All_orders: [],
-    orderAmount: 0,
+const Order = (props) => {
+    const {name, address, postalcode, phonenumber, email} = props;
+    console.log(name, address, postalcode, phonenumber);
+    return (
+        <div>
+            Name: {name}
+            Address: {address}
+            Postalcode: {postalcode}
+            Phone: {phonenumber}
+            Email: {email}
+        </div>
+    )
 }
 
-const Order = {
-    name: "Phupa Sirirat",
-    address : "156/265 Bangkok Thailand",
-    postalCode : 0,
-    email: "",
-}
+export default Order;
 
-const order = Order({
-    name: 'order',
-    initialOrder : initialOrder,
-
-    reducer: { 
-        addOrder(state, action) {
-            const newOrder = action.payload;
-            state.orderAmount++;
-
-        }
-            
-    }
-})

@@ -2,9 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import '../styles/checkout.css';
-import History from './History';
+import Order from '../store/Order';
 
-const Checkout = () => {
+const Checkout = (props) => {
     const [inputs, setInputs] = useState({});
     const cartItems = useSelector((state) => state.cart.cartItems);
     const totalAmount = useSelector((state) => state.cart.totalAmount);
@@ -22,10 +22,9 @@ const Checkout = () => {
         }
         else {
             alert('Purchase sent successfully');
-            alert(inputs.name+','+inputs.address);
-            <History item={inputs}/>
+            alert(inputs.name+', '+inputs.address);
+            props.onAddOrder(inputs);
         }
-        // alert(inputs);
     }
 
 
