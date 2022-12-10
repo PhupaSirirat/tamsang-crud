@@ -24,14 +24,14 @@ const Checkout = () => {
         <div className="all">
             <div className="allform">
                 <div className="subtitle">
-                    <label>ที่อยู่จัดส่ง</label>
+                    <label className="title">ที่อยู่จัดส่ง</label>
                 </div>
                 <form onSubmit={handleSubmit}>
                     <div className="singleform">
                         <input
                             className="insideform"
                             type="text"
-                            placeholder='ชื่อ'
+                            placeholder='ชื่อ นามสกุล'
                             name="firstname"
                             value={inputs.firstname || ""}
                             onChange={handleChange}
@@ -42,52 +42,8 @@ const Checkout = () => {
                         <input
                             className="insideform"
                             type="text"
-                            placeholder='นามสกุล'
-                            name="lastname"
-                            value={inputs.lastname || ""}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="singleform">
-                        <input
-                            className="insideform"
-                            type="text"
-                            placeholder='จังหวัด'
+                            placeholder='ที่อยู่'
                             name="province"
-                            value={inputs.province || ""}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="singleform">
-                        <input
-                            className="insideform"
-                            type="text"
-                            placeholder='เขต/อำเภอ'
-                            name="district"
-                            value={inputs.district || ""}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="singleform">
-                        <input
-                            className="insideform"
-                            type="text"
-                            placeholder='แขวง/ตำบล'
-                            name="subdistrict"
-                            value={inputs.subdistrict || ""}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="singleform">
-                        <input
-                            className="insideform"
-                            type="text"
-                            placeholder='เลขที่อยู่'
-                            name="address"
                             value={inputs.address || ""}
                             onChange={handleChange}
                             required
@@ -118,7 +74,7 @@ const Checkout = () => {
                     <div className="singleform">
                         <input
                             className="insideform"
-                            type="text"
+                            type="email"
                             placeholder='อีเมล์'
                             name="email"
                             value={inputs.email || ""}

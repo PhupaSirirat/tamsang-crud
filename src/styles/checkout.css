@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@700&family=Lato:wght@300&family=Prompt&display=swap');
+
 .all {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0px;
 }
+
+input,
+h6,
+h5 {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+
 @media (max-width: 800px) {
     .all {
         display: flex;
@@ -31,7 +40,7 @@
 }
 
 .insideform {
-    width: 80%;
+    width: 90%;
     background: transparent;
     padding: 7px 20px;
     border: none;
@@ -65,11 +74,11 @@ select:focus {
 }
 
 .checkoutbill {
-    width: 300px;
+    width: 350px;
     max-height: 180px;
     flex-grow: 1;
-    margin-top: 40px;
-    margin-left: 80px;
+    margin-top: 80px;
+    margin-left: 0px;
     margin-right: 60px;
     background: #fde4e4;
     padding: 30px;
