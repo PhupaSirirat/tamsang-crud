@@ -34,7 +34,7 @@ const Carts = () => {
 
             <div className="cart__bottom d-flex align-items-center justify-content-between">
                 <h6>Subtotal : <span>${totalAmount}</span></h6>
-                <button><Link to="/cart">Checkout</Link></button>
+                <button><Link to="/checkout" onClick={toggleCart}>Checkout</Link></button>
             </div>
 
         </ListGroup>
