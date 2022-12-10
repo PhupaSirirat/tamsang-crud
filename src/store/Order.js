@@ -1,19 +1,27 @@
 
-// const initialOrder = {
-//     order: [],
-//     orderAmount: 0,
-// }
+const initialOrder = {
+    
+    All_orders: [],
+    orderAmount: 0,
+}
 
-// const order = Order({
-//     name: 'order',
-//     initialOrder : initialOrder,
+const Order = {
+    name: "Phupa Sirirat",
+    address : "156/265 Bangkok Thailand",
+    postalCode : 0,
+    email: "",
+}
 
-//     reducer: { 
-//         addOrder(state, action) {
-//             const newOrder = action.payload;
-//             state.orderAmount++;
+const order = Order({
+    name: 'order',
+    initialOrder : initialOrder,
 
-//         }
+    reducer: { 
+        addOrder(state, action) {
+            const newOrder = action.payload;
+            state.orderAmount++;
+
+        }
             
-//     }
-// })
+    }
+})

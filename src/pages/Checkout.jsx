@@ -2,9 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import '../styles/checkout.css';
+import History from './History';
 
 const Checkout = () => {
     const [inputs, setInputs] = useState({});
+    const cartItems = useSelector((state) => state.cart.cartItems);
+    const totalAmount = useSelector((state) => state.cart.totalAmount);
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -14,11 +17,17 @@ const Checkout = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(inputs);
+        if (cartItems.length === 0) {
+            alert('No food to purchase')
+        }
+        else {
+            alert('Purchase sent successfully');
+            alert(inputs.name+','+inputs.address);
+            <History item={inputs}/>
+        }
+        // alert(inputs);
     }
 
-    const cartItems = useSelector((state) => state.cart.cartItems);
-    const totalAmount = useSelector((state) => state.cart.totalAmount);
 
     return (
         <div className="all">
@@ -32,8 +41,8 @@ const Checkout = () => {
                             className="insideform"
                             type="text"
                             placeholder='ชื่อ นามสกุล'
-                            name="firstname"
-                            value={inputs.firstname || ""}
+                            name="name"
+                            value={inputs.name || ""}
                             onChange={handleChange}
                             required
                         />
@@ -43,7 +52,7 @@ const Checkout = () => {
                             className="insideform"
                             type="text"
                             placeholder='ที่อยู่'
-                            name="province"
+                            name="address"
                             value={inputs.address || ""}
                             onChange={handleChange}
                             required
@@ -74,7 +83,7 @@ const Checkout = () => {
                     <div className="singleform">
                         <input
                             className="insideform"
-                            type="email"
+                            type="text"
                             placeholder='อีเมล์'
                             name="email"
                             value={inputs.email || ""}
@@ -83,7 +92,7 @@ const Checkout = () => {
                         />
                     </div>
                     <div className="submitframe">
-                        <input className="submitbutton" type="submit" />
+                        <input className="submitbutton" type="submit"/>
                     </div>
                 </form>
             </div>

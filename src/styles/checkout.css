@@ -7,12 +7,6 @@
     gap: 0px;
 }
 
-input,
-h6,
-h5 {
-    font-family: 'IBM Plex Sans Thai', sans-serif;
-}
-
 @media (max-width: 800px) {
     .all {
         display: flex;
@@ -24,7 +18,7 @@ h5 {
 .allform {
     border: none;
     margin-top: 50px;
-    margin-left: 80px;
+    margin-left: 120px;
     flex-grow: 7;
 }
 
@@ -40,6 +34,7 @@ h5 {
 }
 
 .insideform {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
     width: 90%;
     background: transparent;
     padding: 7px 20px;
@@ -79,7 +74,7 @@ select:focus {
     flex-grow: 1;
     margin-top: 80px;
     margin-left: 0px;
-    margin-right: 60px;
+    margin-right: 350px;
     background: #fde4e4;
     padding: 30px;
     box-sizing: border-box;
@@ -92,6 +87,12 @@ select:focus {
 .billline {
     float: right;
 }
+
+.checkoutbill h5,
+.checkoutbill h6 {
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+
 .line {
     opacity: 10%;
 }
