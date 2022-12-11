@@ -32,7 +32,6 @@ const Routers = () => {
         <Route path='/member' element={<Member />}/>
         <Route path='/register' element={<Register />}/>
         <Route path='/userdetail' element={<UserDetail />}/>
-
     </Routes>
 }
 
