@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@700&family=Lato:wght@300&family=Prompt&display=swap');
+
 .no_purchase {
     text-align: center;
     margin: 60px 0;
@@ -6,8 +8,6 @@
 
 .historyframe {
     margin-top: 70px;
-    /* margin-left: 30px; */
-    /* margin-right: 30px; */
 }
 
 table, th, td, tr {
@@ -31,9 +31,5 @@ table, th, td, tr {
 .datarow {
     border-color: #e6e6e6;
     border-bottom: 2px solid #333;
-}
-
-.order_title {
-    display: flex;
-    flex-direction: column;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
 }

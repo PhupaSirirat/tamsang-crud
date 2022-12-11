@@ -65,7 +65,8 @@ select:focus {
 }
 
 .submitbutton:hover {
-    background: #b21a1a;
+    background: #c91d1d;
+    transition: 0.2s;
 }
 
 .checkoutbill {

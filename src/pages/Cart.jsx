@@ -42,10 +42,10 @@ const Cart = () => {
                             </h6>
                             <p>Taxes and shipping will calculate at checkout</p>
                             <div className="cart__page-btn">
-                                <button className="addTOCart__btn me-4">
+                                <button className="addTOCart__btn me-4 continue-shopping-btn">
                                     <Link to='/home'>Continue Shopping</Link>
                                 </button>
-                                <button className="addTOCart__btn">
+                                <button className="addTOCart__btn proceed-btn">
                                     <Link to='/checkout'>Proceed to checkout</Link>
                                 </button>
                             </div>

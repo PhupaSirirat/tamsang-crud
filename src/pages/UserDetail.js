@@ -1,9 +1,9 @@
-import { extendSxProp } from "@mui/system";
+// import { extendSxProp } from "@mui/system";
 import React, { Component } from "react"
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
-import { withCookies } from 'react-cookie';
-
+// import { withCookies } from 'react-cookie';
+import '../styles/userdetail.css';
 
 export default class UserDetail extends Component {
     constructor(props) {
@@ -39,16 +39,12 @@ export default class UserDetail extends Component {
 
     render() {
         return (
-            <div>
-                <br></br>
-                <br></br>
-                <br></br>
-
-                Name<h1>{this.state.userData.fname}</h1>
-                Email<h1>{this.state.userData.email}</h1>
-
-            <Link href="/login">
+            <div className="user-detail">
+                <div><h1>User :{this.state.userData.fname}</h1></div>
+                <div><h1>Email :{this.state.userData.email}</h1></div>
+            <Link href="/login" className="btn">
                 <Button
+                    className="btn btn-primary"
                     type="submit"
                     fullWidth
                     variant="contained"

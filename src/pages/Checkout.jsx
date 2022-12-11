@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import '../styles/checkout.css';
 import { cartActions } from '../store/shopping-cart/cartSlice';
+import { Link } from 'react-router-dom';
 
 const Checkout = (props) => {
     const [inputs, setInputs] = useState({});
@@ -26,6 +27,12 @@ const Checkout = (props) => {
         + " " + date.getHours() 
         + ":" + date.getMinutes() 
         + ":" + date.getSeconds();
+
+        // Get All Product Title in cartItems
+        const all_cartTitle = [];
+        cartItems.map((item) => all_cartTitle.push(item.title));
+
+        inputs.titles = all_cartTitle;
         inputs.totalAmount = totalAmount;
         inputs.showTime = showTime;
 
@@ -37,6 +44,7 @@ const Checkout = (props) => {
             alert('Purchase sent successfully');
             props.onAddOrder(inputs);
             resetCart();
+            // window.location.pathname = '/purchase-history';
         }
     }
 
@@ -47,7 +55,7 @@ const Checkout = (props) => {
                 <div className="subtitle">
                     <label className="title">ที่อยู่จัดส่ง</label>
                 </div>
-                <form onSubmit={handleSubmit}>
+                <form>
                     <div className="singleform">
                         <input
                             className="insideform"
@@ -104,7 +112,10 @@ const Checkout = (props) => {
                         />
                     </div>
                     <div className="submitframe">
-                        <input className="submitbutton" type="submit" />
+                        {/* <input className="submitbutton" type="submit"/> */}
+                        <button className="submitbutton" type="submit" onClick={handleSubmit}>
+                            <Link to='/purchase-history' >Submit</Link>
+                        </button>
                     </div>
                 </form>
             </div>

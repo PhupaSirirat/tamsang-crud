@@ -48,6 +48,15 @@ th {
   .cart-empty {
     margin: 150px 0px;
   }
+
+  .continue-shopping-btn:hover {
+    background: #c91d1d;
+    transition: 0.2s;
+  }
+  .proceed-btn:hover {
+    background: #c91d1d;
+    transition: 0.2s;
+  }
   
   @media only screen and (max-width: 768px) {
     th,

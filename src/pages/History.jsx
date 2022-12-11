@@ -17,6 +17,7 @@ const History = (props) => {
                         <tr className="headrow">
                             <th>Title</th>
                             <th>Address</th>
+                            <th>Order list</th>
                             <th>Total</th>  
                             <th>Date</th>
                             <th>Status</th>

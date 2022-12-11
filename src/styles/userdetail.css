@@ -1,0 +1,13 @@
+
+.user-detail {
+    margin: 150px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.btn {
+    width: 250px;
+}
