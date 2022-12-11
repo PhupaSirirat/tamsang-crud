@@ -26,7 +26,7 @@ export default class UserDetail extends Component {
             body: JSON.stringify({
                 token: window.localStorage.getItem("token"),
             }),
-        })
+            })
             .then((response) => response.json())
             .then((data) => {
                 console.log(data, "userdata");
@@ -35,6 +35,10 @@ export default class UserDetail extends Component {
             .catch((error) => {
                 console.error('Error:', error);
             });
+    }
+
+    logout() {
+        localStorage.removeItem('token')
     }
 
     render() {
