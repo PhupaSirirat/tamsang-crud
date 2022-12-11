@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ConstructionRounded } from '@mui/icons-material';
 
 function Copyright(props) {
   return (
@@ -26,7 +27,23 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#df2020',
+      dark: '#B91010',
+      contrastText: '#000',
+    },
+  },
+});
+
 
 export default function SignUp() {
   const handleSubmit = (event) => {
@@ -39,11 +56,16 @@ export default function SignUp() {
         fname : data.get("firstName"),
         lname : data.get("lastName"),
     }
+    // console.log(data.get("firstName"),data.get("lastName"),
+    //         data.get("email"),data.get("password"),);
 
     fetch('http://localhost:3333/register', {
         method: 'POST',
+        crossDomail : true,
         headers: {
           'Content-Type': 'application/json',
+          Accept : "application/json",
+          "Access-Control-Allow-Origin" : "*",
         },
         body: JSON.stringify(jsonData),
       })
@@ -51,6 +73,8 @@ export default function SignUp() {
         .then((data) => {
           if(data.status === "ok"){
               alert("register success")
+              
+              window.location = "/login"
           } else {
               alert("register failed")
           }
@@ -134,7 +158,9 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              color = "secondary"
+              sx={{ mt: 3, mb: 2 }
+            }
             >
               Sign Up
             </Button>

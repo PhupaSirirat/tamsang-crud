@@ -56,21 +56,25 @@ export default function SignIn() {
 
     fetch('http://localhost:3333/login', {
       method: 'POST',
+      crossDomain : true,
       headers: {
         'Content-Type': 'application/json',
+         Accept : "application/json",
+        "Access-Control-Allow-Origin" : "*",
       },
       body: JSON.stringify(jsonData),
     })
       .then((response) => response.json())
       .then((data) => {
+        // console.log(data,"userLogin");
         if(data.status === "ok"){
           if (jsonData.email !== "admin"){
-            localStorage.setItem("token", data.token)
+            window.localStorage.setItem("token",data.data)
             window.location = "/home"
             alert("login success")
           } else {
-            localStorage.setItem("token", data.token)
-            window.location = "/login"
+            window.localStorage.setItem("token",data.data)
+            window.location = "/userdetail"
             alert("login success")
           }
         } else {
@@ -136,6 +140,18 @@ export default function SignIn() {
               Sign In
             </Button>
           </Box>
+          <Grid container>
+              <Grid item xs>
+                {/* <Link href="#" variant="body2">
+                  Forgot password?
+                </Link> */}
+              </Grid>
+              <Grid item>
+                <Link href="/register" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
         </Box>
       </Container>
     </ThemeProvider>

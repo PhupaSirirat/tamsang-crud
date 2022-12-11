@@ -9,6 +9,7 @@ import History from '../pages/History';
 import Login from "../pages/Login"
 import Member from "../pages/Member"
 import Register from "../pages/Register"
+import UserDetail from "../pages/UserDetail"
 import { useState } from 'react';
 
 
@@ -30,6 +31,8 @@ const Routers = () => {
         <Route path='/login' element={<Login />}/>
         <Route path='/member' element={<Member />}/>
         <Route path='/register' element={<Register />}/>
+        <Route path='/userdetail' element={<UserDetail />}/>
+
     </Routes>
 }
 

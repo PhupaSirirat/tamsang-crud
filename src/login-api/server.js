@@ -1,86 +1,88 @@
-var express = require('express')
-var cors = require('cors')
-var app = express()
-var bodyParser = require('body-parser')
-var jsonParser = bodyParser.json()
-const bcrypt = require('bcrypt')
-const saltRounds = 10
-var jwt = require('jsonwebtoken');
-const secret = "react-login"
+const express = require("express")
+const mongoose = require("mongoose")
+const cors = require("cors")
+const dotenv = require('dotenv')
+const bcrypt = require("bcrypt")
 
+const jwt = require("jsonwebtoken")
+const JWT_SECRET = "1fn901fn904n090n0v3n92019)!90()&"
+
+dotenv.config()
+mongoose.set('strictQuery', true)
+
+const app = express()
+app.use(express.json())
 app.use(cors())
 
-const mysql = require('mysql2')
+const mongoUrl = "mongodb+srv://admin:admin123@tamsung-crud.hyzcl82.mongodb.net/?retryWrites=true&w=majority"
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'mydb'
+mongoose.connect(mongoUrl, {
+    useNewUrlParser : true,
 })
-
-app.post('/register',jsonParser, function (req, res, next) {
-
-    bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
-        connection.execute(
-            'INSERT INTO users (email, password, fname, lname) VALUES (?,?,?,?)',
-            [req.body.email, hash, req.body.fname, req.body.lname],
-            function(err, results, fields) {
-                if(err){
-                    res.json({status : "error", message : err})
-                    return 
-                }
-              res.json({status : "ok"})
-            }
-          )
-    });
+.then(() => {
+    console.log("Connected to database");
 })
+.catch((e) => console.log(e))
 
-app.post('/login', jsonParser, function(req,res,next) {
-    connection.execute(
-        'SELECT * FROM users WHERE email=?',
-        [req.body.email],
-        function(err, users, fields) {
-            if(err){
-                res.json({status : "error", message : err})
-                return 
-            }
-            if(users.length == 0){
-                res.json({status : "error", message : "No user found"})
-                return
-            }
-            bcrypt.compare(req.body.password, users[0].password,function(err,isLogin){
-                if(isLogin){
-                    var token = jwt.sign({email : users[0].email}, secret, {expiresIn:"1h"})
-                    res.json({status : "ok", message:"Login Success",token})
-                } else {
-                    res.json({status : "error", message:"Login Failed"})
-                }
-            })
+require("./userDetails")
+const User = mongoose.model("UserInfo")
+
+app.post("/register",async(req,res) => {
+    const {fname,lname,email,password} = req.body
+    const encryptedPassword = await bcrypt.hash(password,10)
+    try {
+        const oldUser = await User.findOne({email})
+
+        if (oldUser){
+            return res.send({error : "User Exists"})
         }
-      )
-})
+        await User.create({
+            fname,
+            lname,
+            email,
+            password : encryptedPassword
+        })
 
-app.post('/authen', jsonParser, function(req,res,next) {
-    try{
-        const token = req.headers.authorization.split(" ")[1]
-        var decoded = jwt.verify(token,secret)
-        res.json({status:"ok",decoded})
-    } catch(err){
-        res.json({status:"error",message:err.message})
+        res.send({status : "ok"})
+    } catch (error){
+        res.send({status : "error"})
     }
 })
 
-app.get("/member",(req,res) => {
-    connection.query("SELECT * FROM users",(err,result) =>{
-        if (err){
-            console.log(err);
+app.post("/login",async(req,res) =>{
+    const {email,password} = req.body
+
+    const user = await User.findOne({email})
+    if (!user){
+        return res.json({error : "User Not Found"})
+    }
+    if (await bcrypt.compare(password,user.password)) {
+        const token = jwt.sign({email:user.email},JWT_SECRET)
+        if (res.status(201)){
+            return res.json({status : "ok",data:token})
         } else {
-            res.send(result)
+            return res.json({error : "error"})
         }
-    })
+    }
+    res.json({status : "error",error : "Invalid Password"})
 })
 
- 
-app.listen(4444, function () {
-  console.log('CORS-enabled web server listening on port 4444')
+app.post("/userdata",async(req,res)=>{
+    const {token} = req.body
+    try{
+        const user = jwt.verify(token,JWT_SECRET)
+        const useremail = user.email
+        User.findOne({email:useremail}).then((data)=>{
+            res.send({status:"ok",data:data})
+        }).catch((error)=>{
+            res.send({status:"error",data:"error"})
+        })
+    } catch(error){
+
+    }
+})
+
+
+app.listen(3333, () => {
+    console.log("Server Started");
 })
