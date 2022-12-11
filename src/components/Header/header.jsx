@@ -67,7 +67,7 @@ const Header = () => {
           </span>
 
           <span className="user">
-            <Link to="/login">
+            <Link to={localStorage.getItem('token') === null ? '/login' : '/userdetail'}>
               <i className="ri-user-line"></i>
             </Link>
           </span>

@@ -70,13 +70,13 @@ export default function SignIn() {
         if(data.status === "ok"){
           if (jsonData.email !== "admin"){
             window.localStorage.setItem("token",data.data)
-            window.location.pathname = "/userdetail"
             alert("login success")
           } else {
             window.localStorage.setItem("token",data.data)
-            window.location.pathname = "/userdetail";
+            
             alert("login success")
           }
+          window.location.pathname = "/home";
         } else {
             alert("login failed")
         }
