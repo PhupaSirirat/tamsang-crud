@@ -44,8 +44,8 @@ export default class UserDetail extends Component {
     render() {
         return (
             <div className="user-detail">
-                <div><h1>User :{this.state.userData.fname} {this.state.userData.lname}</h1></div>
-                <div><h1>Email :{this.state.userData.email}</h1></div>
+                <div><h1>User : {this.state.userData.fname} {this.state.userData.lname}</h1></div>
+                <div><h1>Email : {this.state.userData.email}</h1></div>
             <Link href="/login" className="btn">
                 <Button
                     className="btn btn-primary"
