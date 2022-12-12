@@ -22,6 +22,7 @@ const Checkout = (props) => {
 
     const handleSubmit = (event) => {
         // Get Date & push in [inputs]
+
         const date = new Date();
         const showTime = date.getFullYear() + "/" + (date.getMonth()+1) + "/" + date.getDate() 
         + " " + date.getHours() 
@@ -35,6 +36,42 @@ const Checkout = (props) => {
         inputs.titles = all_cartTitle;
         inputs.totalAmount = totalAmount;
         inputs.showTime = showTime;
+
+        // For Backend
+
+        const jsonData = {
+            name : inputs.name,
+            email : inputs.email,
+            phonenum : inputs.phonenumber,
+            orderTime : inputs.showTime,
+            total : inputs.totalAmount,
+            item : all_cartTitle
+        }
+
+
+        fetch('http://localhost:3333/history', {
+        method: 'POST',
+        crossDomail : true,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept : "application/json",
+          "Access-Control-Allow-Origin" : "*",
+        },
+        body: JSON.stringify(jsonData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if(data.status === "ok"){
+              console.log("Add success")
+          } else {
+              console.log("Add failed")
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+
+        // End Backend
 
         event.preventDefault();
         if (cartItems.length === 0) {
@@ -62,7 +99,8 @@ const Checkout = (props) => {
                             type="text"
                             placeholder='ชื่อ นามสกุล'
                             name="name"
-                            value={inputs.name || ""}
+                            // value={inputs.name || ""}
+                            value={inputs.name}
                             onChange={handleChange}
                             required
                         />
@@ -95,7 +133,8 @@ const Checkout = (props) => {
                             type="number"
                             placeholder='หมายเลขโทรศัพท์'
                             name="phonenumber"
-                            value={inputs.phonenumber || ""}
+                            // value={inputs.phonenumber || ""}
+                            value={inputs.phonenumber}
                             onChange={handleChange}
                             required
                         />
@@ -106,6 +145,7 @@ const Checkout = (props) => {
                             type="text"
                             placeholder='อีเมล์'
                             name="email"
+                            // value={inputs.email || ""}
                             value={inputs.email || ""}
                             onChange={handleChange}
                             required

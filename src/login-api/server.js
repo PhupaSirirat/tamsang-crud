@@ -25,7 +25,10 @@ mongoose.connect(mongoUrl, {
 .catch((e) => console.log(e))
 
 require("./userDetails")
+require("./historyDetail")
 const User = mongoose.model("UserInfo")
+const History = mongoose.model("History")
+
 
 app.post("/register",async(req,res) => {
     const {fname,lname,email,password} = req.body
@@ -82,6 +85,24 @@ app.post("/userdata",async(req,res)=>{
     }
 })
 
+app.post("/history",async(req,res) => {
+    const {name,email,phonenum,orderTime,total,item} = req.body
+    try {
+        
+        await History.create({
+            name,
+            email,
+            phonenum,
+            orderTime,
+            total : total+" ฿",
+            item,
+        })
+
+        res.send({status : "ok"})
+    } catch (error){
+        res.send({status : "error"})
+    }
+})
 
 app.listen(3333, () => {
     console.log("Server Started");
