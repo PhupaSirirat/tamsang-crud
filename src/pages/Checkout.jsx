@@ -10,9 +10,7 @@ const Checkout = (props) => {
     const cartItems = useSelector((state) => state.cart.cartItems);
     const totalAmount = useSelector((state) => state.cart.totalAmount);
     const dispatch = useDispatch();
-    const resetCart = () => {
-        dispatch(cartActions.resetItem());
-    }
+    const resetCart = () => {dispatch(cartActions.resetItem());}
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -48,40 +46,40 @@ const Checkout = (props) => {
             item : all_cartTitle
         }
 
-
-        fetch('http://localhost:3333/history', {
-        method: 'POST',
-        crossDomail : true,
-        headers: {
-          'Content-Type': 'application/json',
-          Accept : "application/json",
-          "Access-Control-Allow-Origin" : "*",
-        },
-        body: JSON.stringify(jsonData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if(data.status === "ok"){
-              console.log("Add success")
-          } else {
-              console.log("Add failed")
-          }
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
+        if (localStorage.getItem('token') !== null){
+            fetch('http://localhost:3333/history', {
+            method: 'POST',
+            crossDomail : true,
+            headers: {
+                'Content-Type': 'application/json',
+                Accept : "application/json",
+                "Access-Control-Allow-Origin" : "*",
+            },
+            body: JSON.stringify(jsonData),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if(data.status === "ok"){
+                    alert("Add success")
+                } else {
+                    alert("Add failed")
+                }
+            })
+            .catch((error) => {
+                alert('Error: fail to add');
+            });
+        }
+        
 
         // End Backend
-
         event.preventDefault();
         if (cartItems.length === 0) {
             alert('No food to purchase')
         }
         else {
-            alert('Purchase sent successfully');
+            alert('Purchase sent successfully,\ncheck order(s) details on history page');
             props.onAddOrder(inputs);
             resetCart();
-            // window.location.pathname = '/purchase-history';
         }
     }
 
@@ -92,15 +90,15 @@ const Checkout = (props) => {
                 <div className="subtitle">
                     <label className="title">ที่อยู่จัดส่ง</label>
                 </div>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="singleform">
                         <input
                             className="insideform"
                             type="text"
                             placeholder='ชื่อ นามสกุล'
                             name="name"
-                            // value={inputs.name || ""}
                             value={inputs.name}
+                            // value={inputs.name}
                             onChange={handleChange}
                             required
                         />
@@ -111,7 +109,7 @@ const Checkout = (props) => {
                             type="text"
                             placeholder='ที่อยู่'
                             name="address"
-                            value={inputs.address || ""}
+                            value={inputs.address}
                             onChange={handleChange}
                             required
                         />
@@ -122,7 +120,7 @@ const Checkout = (props) => {
                             type="number"
                             placeholder='รหัสไปรษนีย์'
                             name="postalcode"
-                            value={inputs.postalcode || ""}
+                            value={inputs.postalcode}
                             onChange={handleChange}
                             required
                         />
@@ -133,8 +131,8 @@ const Checkout = (props) => {
                             type="number"
                             placeholder='หมายเลขโทรศัพท์'
                             name="phonenumber"
-                            // value={inputs.phonenumber || ""}
                             value={inputs.phonenumber}
+                            // value={inputs.phonenumber}
                             onChange={handleChange}
                             required
                         />
@@ -145,16 +143,15 @@ const Checkout = (props) => {
                             type="text"
                             placeholder='อีเมล์'
                             name="email"
-                            // value={inputs.email || ""}
-                            value={inputs.email || ""}
+                            value={inputs.email}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="submitframe">
                         {/* <input className="submitbutton" type="submit"/> */}
-                        <button className="submitbutton" type="submit" onClick={handleSubmit}>
-                            <Link to='/purchase-history' >Submit</Link>
+                        <button className="submitbutton" type="submit"> 
+                            Submit
                         </button>
                     </div>
                 </form>
