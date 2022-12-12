@@ -23,7 +23,7 @@ const Contact = () => {
         showTime: showTime,
       }
 
-      fetch('http://localhost:3333/history', {
+      fetch('http://localhost:3333/feedback', {
             method: 'POST',
             crossDomail : true,
             headers: {

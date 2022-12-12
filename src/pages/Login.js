@@ -54,7 +54,10 @@ export default function SignIn() {
         password: data.get('password'),
     }
 
-    fetch('http://localhost:3333/login', {
+    // const API_URL = "https://sour-times-scream-49-230-141-85.loca.lt/login"
+    const API_URL = "http://localhost:3333/login"
+
+    fetch(API_URL, {
       method: 'POST',
       crossDomain : true,
       headers: {

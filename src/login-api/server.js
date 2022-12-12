@@ -25,10 +25,7 @@ mongoose.connect(mongoUrl, {
 .catch((e) => console.log(e))
 
 require("./userDetails")
-require("./historyDetail")
 const User = mongoose.model("UserInfo")
-const History = mongoose.model("History")
-
 
 app.post("/register",async(req,res) => {
     const {fname,lname,email,password} = req.body
@@ -85,6 +82,9 @@ app.post("/userdata",async(req,res)=>{
     }
 })
 
+require("./historyDetail")
+const History = mongoose.model("History")
+
 app.post("/history",async(req,res) => {
     const {name,email,phonenum,orderTime,total,item} = req.body
     try {
@@ -96,6 +96,25 @@ app.post("/history",async(req,res) => {
             orderTime,
             total : total+30+" ฿",
             item,
+        })
+
+        res.send({status : "ok"})
+    } catch (error){
+        res.send({status : "error"})
+    }
+})
+
+require("./feedbackDetail")
+const Feedback = mongoose.model("Feedback")
+
+app.post("/feedback",async(req,res) => {
+    const {name,email,feedback,showTime} = req.body
+    try {
+        await Feedback.create({
+            name,
+            email,
+            feedback,
+            showTime,
         })
 
         res.send({status : "ok"})
