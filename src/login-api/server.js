@@ -94,7 +94,7 @@ app.post("/history",async(req,res) => {
             email,
             phonenum,
             orderTime,
-            total : total+" ฿",
+            total : total+30+" ฿",
             item,
         })
 
