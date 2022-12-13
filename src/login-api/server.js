@@ -87,8 +87,8 @@ const History = mongoose.model("History")
 
 app.post("/history",async(req,res) => {
     const {name,email,phonenum,orderTime,total,item} = req.body
+    
     try {
-        
         await History.create({
             name,
             email,
@@ -97,8 +97,9 @@ app.post("/history",async(req,res) => {
             total : total+30+" ฿",
             item,
         })
-
+    
         res.send({status : "ok"})
+
     } catch (error){
         res.send({status : "error"})
     }

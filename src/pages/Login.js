@@ -86,6 +86,7 @@ export default function SignIn() {
       })
       .catch((error) => {
         console.error('Error:', error);
+        window.location.pathname = "/home";
       });
 
   };
